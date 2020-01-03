@@ -61,9 +61,6 @@ print(a.y, a.x)
 
 a.move()
 print(a.y, a.x)
- 
-#a.share_with_neighbours("neighourhood")
-#print(a.store)
 
 
 matplotlib.pyplot.xlim(0, 100)
