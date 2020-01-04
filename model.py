@@ -60,7 +60,7 @@ matplotlib.pyplot.imshow(environment)
 
 for self in agents:
     for agent in agents:
-        distance = distance_between(self, agent)    
+        agentframework.Agent.distance_between(self, agent)    
 
 matplotlib.pyplot.show()
 
