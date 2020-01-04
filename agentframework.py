@@ -1,12 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Jan  3 16:44:37 2020
-
-@author: tori
-"""
-
-
 import random 
 
 class Agent:
@@ -20,7 +11,7 @@ class Agent:
         self.neighbourhood = neighbourhood
         
     """  
-    # No longer need loops through comparing distances between each agents
+    # No longer need loops through comparing distances between each agents.
     def move(self):
         if random.random() < 0.5:
             self.x = (self.x + 1) % 100
@@ -53,7 +44,7 @@ class Agent:
     def distance_between(self, agent):
         return (((self.x - agent.x)**2) + ((self.y - agent.y)**2))**0.5
    
-
+# Creat Agent object to test print.
 a = Agent("environment","agents","neighbourhood")
 print(a.y, a.x)
 
