@@ -45,8 +45,8 @@ for i in range(num_of_agents):
 # Move the agents.
 for j in range(num_of_iterations):
     for i in range(num_of_agents):
-        #agents[i].move()
-        #agents[i].eat()
+        agents[i].move()
+        agents[i].eat()
         agents[i].share_with_neighbours()
 
 # Set properties and show the plot.
