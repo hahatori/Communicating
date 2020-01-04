@@ -8,10 +8,8 @@ class Agent:
         self.y = random.randint(0,99)
         self.x = random.randint(0,99)
         self.agents = agents
-        self.neighbourhood = neighbourhood
-        
-    """  
-    # No longer need loops through comparing distances between each agents.
+        self.neighbourhood = neighbourhood  
+    
     def move(self):
         if random.random() < 0.5:
             self.x = (self.x + 1) % 100
@@ -27,7 +25,7 @@ class Agent:
         if self.environment[self.y][self.x] > 10:
             self.environment[self.y][self.x] -= 10
         self.store += 10 
-    """   
+    
     
     # Creat methods to calculate the distance to each of the other agents.
     def share_with_neighbours(self):
