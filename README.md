@@ -20,7 +20,7 @@ This project including [in.txt](https://github.com/hahatori/Communicating/blob/m
 
 **Model** code can creat models for connecting developers and users.
 
-### OOP (Object Oriented Programming)
+### The self 
 
 **Creat Class, Object and Method**
 
