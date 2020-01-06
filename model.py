@@ -10,16 +10,17 @@ def distance_between(self, agent):
     return (((self.x - agent.x)**2) + ((self.y - agent.y)**2))**0.5
 """
 
-num_of_agents = 100
-num_of_iterations = 10
-neighbourhood = 20
-agents = []
-rowlist = []
-environment = []
+# Define arguments.
+num_of_agents = 100     # Make a num_of_agents variable and assign it to 100
+num_of_iterations = 10  # Make a num_of_iterations variable and assign it to 10
+neighbourhood = 20      # Make a neighbourhood variable and assign it to 20
+agents = []             # Creat agents list.
+#rowlist = []            
+environment = []        # Creat environment list.
 
 # To load file.
 with open("in.txt") as f:
-    data = f.read().splitlines() 
+    data = f.read().splitlines() # Only read
 
     for row in data:
         rowlist = []
@@ -32,35 +33,36 @@ with open("in.txt") as f:
         environment.append(rowlist)
 
 for line in agents:
-    f.write(line)
+    f.write(line) # Only write
 #f.close()
 
 
-# Make the agents.
+# Make the agents by putting into a for-loop.
 for i in range(num_of_agents):
-    agents.append(agentframework.Agent(environment,agents, neighbourhood))
-    matplotlib.pyplot.scatter(agents[i].x,agents[i].y)
+    agents.append(agentframework.Agent(environment, agents, neighbourhood)) 
+    matplotlib.pyplot.scatter(agents[i].x, agents[i].y)    # Make scatter plot.
 #matplotlib.pyplot.show()
 
-# Move the agents.
+# Move the agents by putting into nest for-loops.
 for j in range(num_of_iterations):
     for i in range(num_of_agents):
-        agents[i].move()
-        agents[i].eat()
-        agents[i].share_with_neighbours()
+        agents[i].move()                  # Calling move method from agent.
+        agents[i].eat()                   # Calling eat method from agent.
+        agents[i].share_with_neighbours() # Calling share_with_neighbours method from agent.
 
 # Set properties and show the plot.
-matplotlib.pyplot.xlim(0, 100)
-matplotlib.pyplot.ylim(0, 100)
-matplotlib.pyplot.title("Plot")
-matplotlib.pyplot.imshow(environment)
+matplotlib.pyplot.xlim(0, 100)            # Set the x-axis range from 0 to 100.
+matplotlib.pyplot.ylim(0, 100)            # Set the y-axis range from 0 to 100.
+matplotlib.pyplot.title("Plot")           # Set plot title.
+matplotlib.pyplot.imshow(environment).    # Display an image on the axes.
 
 #for i in range(num_of_agents):
    # matplotlib.pyplot.scatter(agents[i].x,agents[i].y)
 
+# Use for-each loop iterator to put out agents.    
 for self in agents:
     for agent in agents:
-        agentframework.Agent.distance_between(self, agent)    
+        agentframework.Agent.distance_between(self, agent) # Calling the method from agentframework.py.     
 
-matplotlib.pyplot.show()
+matplotlib.pyplot.show()                  # Display the scatter dots plot.
 
