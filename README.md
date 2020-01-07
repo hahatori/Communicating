@@ -22,7 +22,7 @@ This project including [in.txt](https://github.com/hahatori/Communicating/blob/m
 
 ### The self 
 
-**self** represents an instance of a class, not a class. self.class points to the class.
+**self** represents an instance of a class, not a class. ```self.class ``` points to the class.
 
 ```sh
 $ class Agent:       
@@ -89,13 +89,15 @@ Then use ```agentframework.Agent.distance_between(self, agent) ``` to call it in
 
 ## Actual Results
 
-![Plot](https://github.com/hahatori/Python_Assignment1/blob/master/Communicating.png)
+![Plot](https://github.com/hahatori/Python_Assignment1/blob/master/Communi.png)
 
 ## Issues
 
-1. ```__init__(self, environment):``` is a initialization method and it creates a formal parameter called **environment**. When creating a new instance of the class, we do not explicitly call the __init__ method, but pass the arguments in the parentheses following the class name. environment is a mutable object,and the variable passes in the object, all the Agents link to the same environment object. So when the Agents changes the environment data, it changes for all agents.
+1. ```self``` 
 
-2. ```__str__(self):``` can return object and description property information, will be automatically called. ```str()``` built-in function uses ```__str__``` to display the string of the object.
+2. When you creat the **share_with_neighbours** method, this method calculates the distance between the agents and the its neighbor by iterating through the parameter values passed in from the outside. If distance is less than or equal to the neighbourhood, divide sum by two to calculate average then pass the average values on to self.store and agent.store.
 
-3. The question of by finding the size of the agent's internal environment and using the size when randomly assigning their starting positions and working with boundary conditions, the agent can wander through the environment.
- 
+3. How does the model import and execute the commands in agents.
+
+
+
