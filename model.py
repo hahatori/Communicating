@@ -21,7 +21,7 @@ environment = []        # Creat environment list.
 # To load file.
 with open("in.txt") as f:
     data = f.read().splitlines() # Only read
-
+# The downloaded text format is not standard, so needs to change.
     for row in data:
         rowlist = []
         for value in row.split(','):
@@ -64,5 +64,6 @@ for self in agents:
     for agent in agents:
         agentframework.Agent.distance_between(self, agent) # Calling the method from agentframework.py.     
 
-matplotlib.pyplot.show()                  # Display the scatter dots plot.
+# Display the scatter dots plot.
+matplotlib.pyplot.show()                  
 
