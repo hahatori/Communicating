@@ -50,11 +50,11 @@ for j in range(num_of_iterations):
         agents[i].eat()                   # Calling eat method from agent.
         agents[i].share_with_neighbours() # Calling share_with_neighbours method from agent.
 
-    # Set properties and show the plot.
-    matplotlib.pyplot.xlim(0, 100)            # Set the x-axis range from 0 to 100.
-    matplotlib.pyplot.ylim(0, 100)            # Set the y-axis range from 0 to 100.
-    matplotlib.pyplot.title("Plot")           # Set plot title.
-    matplotlib.pyplot.imshow(environment)     # Display an image on the axes.
+# Set properties and show the plot.
+matplotlib.pyplot.xlim(0, 100)            # Set the x-axis range from 0 to 100.
+matplotlib.pyplot.ylim(0, 100)            # Set the y-axis range from 0 to 100.
+matplotlib.pyplot.title("Plot")           # Set plot title.
+matplotlib.pyplot.imshow(environment)     # Display an image on the axes.
 
 #for i in range(num_of_agents):
    # matplotlib.pyplot.scatter(agents[i].x,agents[i].y)
