@@ -22,16 +22,24 @@ This project including [in.txt](https://github.com/hahatori/Communicating/blob/m
 
 ### The self 
 
-**Creat Class, Object and Method**
+self represents an instance of a class, not a class. self.class points to the class.
 
 ```sh
-$ class Agent:   # Creat "Agent" class.    
-      def eat(self): # Define "eat" method.
-      pass    #An empty block.
+$ class Agent:       
+      def eat(self): 
+          print(self)
+          print(self.__class__)
       
-  a = Agent() #Creat a object.
-  a.eat()
-  print a
+  a = Agent() 
+  print (a)
+  a.eat()  
+```
+Output:
+
+```sh
+$ <__main__.Agent object at 0x12253fc10>
+  <__main__.Agent object at 0x12253fc10>
+  <class '__main__.Agent'>
 ```
 
 **agentframework.py** :
