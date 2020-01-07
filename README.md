@@ -22,7 +22,7 @@ This project including [in.txt](https://github.com/hahatori/Communicating/blob/m
 
 ### The self 
 
-self represents an instance of a class, not a class. self.class points to the class.
+**self** represents an instance of a class, not a class. self.class points to the class.
 
 ```sh
 $ class Agent:       
@@ -42,70 +42,50 @@ $ <__main__.Agent object at 0x12253fc10>
   <class '__main__.Agent'>
 ```
 
-**agentframework.py** :
+**self** needs to be defined at definition time, but is passed in automatically when called :
 
 ```sh
-$ import random 
-
-  class Agent(): 
-
-      def __init__(self, environment):  
-          self.environment = environment 
-          self.store = 0
-          self.y = random.randint(0,99) 
-          self.x = random.randint(0,99) 
-
-      def move(self):
-          if random.random() < 0.5:
-              self.x = (self.x + 1) % 100
-          else:
-              self.x = (self.x - 1) % 100
-
-          if random.random() < 0.5:
-              self.y = (self.y + 1) % 100
-          else:
-              self.y = (self.y - 1) % 100
-
-      def eat(self):
-          if self.environment[self.y][self.x] > 10:
-              self.environment[self.y][self.x] -= 10
-          self.store += 10 
-
-      def __str__(self):
-         return "y= %s, x= %s" % (self.y, self.x)
-          
-  a = Agent("environment")
-  print(a)
-  print(a.move, a.eat)
-  print("Location:%s" % id(a), a)
+$ class Agent(object): 
+  def __init__(self, name, age): 
+    self.name = name 
+    self.age = age 
+  
+  def SetName(self,name): 
+    self.name = name 
+  
+  def SetAge(self,age): 
+    self.age = age 
+  
+  def GetName(self): 
+    return self.name 
+  
+  def GetAge(self): 
+    return self.age 
+  
+u = User('Obama',17) 
+print u.GetName() 
+print u.GetAge() 
 ```
 
 Output:
 
 ```sh
-$ <bound method Agent.move of <__main__.Agent object at 0x117326a10>> <bound method Agent.eat of <__main__.Agent object at 0x117326a10>>
-  y= 15, x= 36
-  Location:4684147216 y= 15, x= 36
+$ Obama
+  17
 ```
-
-### Matplotlib
-
-**Matplotlib** is a Python 2D drawing library that generates graphics in a variety of hardcopy formats and cross-platform interactive environments. With Matplotlib, developers can generate graphs, histograms, power spectra, bar charts, error graphs, scatter plots, etc. in just a few lines of code.
-
-```sh
-$ import matplotlib.pyplot as plt 
-
-  plt.xlim(0, 100)          
-  plt.ylim(0, 100) 
-  plt.show()
-```
-Output:
-
-![Matplotlib frame](https://github.com/hahatori/Python_Assignment1/blob/master/Matplotlib.png)
 
 ## Theoretical Results
 
-Expect model to import the in.txt file and call the agent, the agent moves random coordinate points and calculates the distance between two sets of them, then the model displays an image on the axes, and the 10 points are randomly distributed over the images. 
+**Communication** allows programs to run to adjust each other's variables, or to call functions within each other and pass information, or to retrieve information from each other.
+
+Move below statement to **agentframework.py** :
+
+```sh
+$ def distance_between(self, agent):
+    return (((self.x - agent.x)**2) + ((self.y - agent.y)**2))**0.5
+```
+
+Then use ```agentframework.Agent.distance_between(self, agent) ``` to call it in the model. 
 
 ## Actual Results
 
