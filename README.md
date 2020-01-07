@@ -31,7 +31,7 @@ $ class Agent:
           print(self.__class__)
       
   a = Agent() 
-  print (a)
+  print(a)
   a.eat()  
 ```
 Output:
@@ -85,7 +85,7 @@ $ def distance_between(self, agent):
     return (((self.x - agent.x)**2) + ((self.y - agent.y)**2))**0.5
 ```
 
-Then use ```agentframework.Agent.distance_between(self, agent) ``` to call it in the model. 
+Then use ```agentframework.Agent.distance_between(self, agent)``` to call it in the model. 
 
 ## Actual Results
 
@@ -93,7 +93,7 @@ Then use ```agentframework.Agent.distance_between(self, agent) ``` to call it in
 
 ## Issues
 
-1. ```self``` 
+1. The reason you can access data everywhere in the class is that you're essentially binding this thing called **self**. It's the first argument to the method. Instead of calling **self**, you can call it something else, self is just a convention.
 
 2. When you creat the **share_with_neighbours** method, this method calculates the distance between the agents and the its neighbor by iterating through the parameter values passed in from the outside. If distance is less than or equal to the neighbourhood, divide sum by two to calculate average then pass the average values on to self.store and agent.store.
 
